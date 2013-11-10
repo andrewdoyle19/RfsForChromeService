@@ -1,7 +1,6 @@
 ﻿using Nancy;
 using Nancy.Bootstrappers.Ninject;
 using Ninject;
-using Ninject.Modules;
 
 namespace RfsForChrome.Service
 {
@@ -14,16 +13,10 @@ namespace RfsForChrome.Service
         protected override void ApplicationStartup(IKernel container, Nancy.Bootstrapper.IPipelines pipelines)
         {
             base.ApplicationStartup(container, pipelines);
-            container.Load<MyModule>();
+            container.Load<FireSearchModule>();
+
+            
         }
          
-    }
-
-    public class MyModule : NinjectModule
-    {
-        public override void Load()
-        {
-            Bind<IFetchMajorIncidents>().To<FetchMajorIncidents>().InSingletonScope();
-        }
     }
 }

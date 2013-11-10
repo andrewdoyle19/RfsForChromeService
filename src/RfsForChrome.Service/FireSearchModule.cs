@@ -2,7 +2,7 @@
 
 namespace RfsForChrome.Service
 {
-    public class MyModule : NinjectModule
+    public class FireSearchModule : NinjectModule
     {
         public override void Load()
         {

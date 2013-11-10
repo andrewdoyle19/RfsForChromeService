@@ -6,15 +6,8 @@ namespace RfsForChrome.Service
     {
         public IndexModule(IFetchMajorIncidents fetchMajorIncidents)
         {
-            //Get["/"] = parameters =>
-            //{
-            //    return View["index"];
-            //};
-
-            Get["/fires"] = _ =>
-            {
-                return fetchMajorIncidents.Fetch();
-            };
+            Get["/fires"] = _ => Response.AsJson(fetchMajorIncidents.Fetch());
+            
         }
     }
 }
