@@ -35,12 +35,12 @@ namespace RfsForChrome.Service
                     Title = s.Element("title").Value,
                     Link = s.Element("link").Value,
                     Category = s.Element("category").Value,
-                    LastUpdated = s.Element("pubDate").Value.ToDateTime()
+                    LastUpdated = s.Element("pubDate").Value.MyToDateTime()
                 });
             
             
             
-            return test;
+            return test.Take(10);
         }
 
         
