@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace RfsForChrome.Service.Extensions
 {
@@ -7,7 +8,7 @@ namespace RfsForChrome.Service.Extensions
         public static DateTime MyToDateTime(this string value)
         {
             DateTime converted;
-            DateTime.TryParse(value, out converted);
+            DateTime.TryParse(value, CultureInfo.CreateSpecificCulture("en-AU"), DateTimeStyles.None, out converted);
             return converted;
         }
     }

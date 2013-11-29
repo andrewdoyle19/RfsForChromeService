@@ -1,6 +1,7 @@
 ﻿using Nancy;
 using Nancy.Bootstrappers.Ninject;
 using Ninject;
+using RfsForChrome.Service.Infrastructure;
 
 namespace RfsForChrome.Service
 {

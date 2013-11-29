@@ -8,10 +8,17 @@ namespace RfsForChrome.Service.Models
     {
         public string Title { get; set; }
 
-        public string Category { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Category Category { get; set; }
 
         public string Link { get; set; }
 
         public DateTime LastUpdated { get; set; }
+
+        public string CouncilArea { get; set; }
+
+        public string Status { get; set; }
+
+        public string Size { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
+using Nancy;
 using RfsForChrome.Service.Models;
 using RfsForChrome.Service.Extensions;
 
@@ -17,47 +18,29 @@ namespace RfsForChrome.Service
     
     public class FetchMajorIncidents : IFetchMajorIncidents
     {
-        private readonly string _majorIncidentsUrl;
+        private readonly IOrderAndModelIncidents _orderIncidents;
+        private readonly Uri _majorIncidentsUrl;
 
-        public FetchMajorIncidents()
+        public FetchMajorIncidents(IOrderAndModelIncidents orderIncidents, Uri majorIncidentsUrl)
         {
-            _majorIncidentsUrl = ConfigurationManager.AppSettings["MajorIncidentsUrl"];
+            _orderIncidents = orderIncidents;
+            _majorIncidentsUrl = majorIncidentsUrl;
+
         }
 
         public IEnumerable<Incident> Fetch()
         {
-            var document = XDocument.Load(_majorIncidentsUrl);
-
-            var items = document.Descendants("item");
-            
-            var test = items.Select(s => new Incident()
-                {
-                    Title = s.Element("title").Value,
-                    Link = s.Element("link").Value,
-                    Category = s.Element("category").Value,
-                    LastUpdated = s.Element("pubDate").Value.MyToDateTime()
-                });
-            
-            
-            
-            return test.Take(10);
-        }
-
-        
-
-        private Category GetCategory(string value)
-        {
-            switch (value)
+            try
             {
-                case "Emergency Warning": 
-                    return Category.EmergencyWarning;
-                case "Watch and Act" : 
-                    return Category.WatchAndAct;
-                case "Advice" : 
-                    return Category.Advice;
-                default:
-                    return Category.NotApplicable;
+                var document = XDocument.Load(_majorIncidentsUrl.ToString());
+                return _orderIncidents.CreateModel(document).Take(10);
             }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Something went wrong :(", ex);    
+            }
+            
         }
+
     }
 }
