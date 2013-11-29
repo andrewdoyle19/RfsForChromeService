@@ -1,0 +1,45 @@
+﻿<rss xmlns:georss="http://www.georss.org/georss" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>NSW Rural Fire Service Current Incidents</title>
+    <description>Fire Incidents as at Friday, 29 November 2013</description>
+    <link>
+      http://www.rfs.nsw.gov.au/dsp_content.cfm?cat_id=683
+    </link>
+    <language>en-AU</language>
+    <webMaster>webmaster@rfs.nsw.gov.au (RFS Webmaster)</webMaster>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <atom:link href="http://feeds.rfs.nsw.gov.au/majorIncidents.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 29 Nov 2013 09:49:30 GMT</pubDate>
+    <ttl>60</ttl>
+    <item>
+      <title>Haystack Rawlings Lane Berry</title>
+      <link>
+        http://www.rfs.nsw.gov.au/dsp_content.cfm?cat_id=683
+      </link>
+      <category>Advice</category>
+      <guid isPermaLink="false">tag:www.rfs.nsw.gov.au,2013-11-29:83564</guid>
+      <pubDate>Fri, 29 Nov 2013 05:48:00 GMT</pubDate>
+      <description>
+        <![CDATA[
+ALERT LEVEL: Advice<br />LOCATION: 22 a Rawlings Lane berry<br />COUNCIL AREA: Shoalhaven<br />STATUS: out of control<br />TYPE: Haystack fire<br />FIRE: Yes<br />SIZE: 0 ha<br />RESPONSIBLE AGENCY: Rural Fire Service<br />UPDATED: 29 Nov 2013 16:48
+]]>
+      </description>
+      <georss:point>-34.7706 150.69</georss:point>
+    </item>
+    <item>
+      <title>Pacific Hwy xs Cooks Lane Clybucca</title>
+      <link>
+        http://www.rfs.nsw.gov.au/dsp_content.cfm?cat_id=683
+      </link>
+      <category>Not Applicable</category>
+      <guid isPermaLink="false">tag:www.rfs.nsw.gov.au,2013-11-29:83569</guid>
+      <pubDate>Fri, 29 Nov 2013 09:04:00 GMT</pubDate>
+      <description>
+        <![CDATA[
+ALERT LEVEL: Not Applicable<br />LOCATION: Pacific Hwy xs Cooks Lane Clybucca<br />COUNCIL AREA: Kempsey<br />STATUS: out of control<br />TYPE: Motor Vehicle Accident<br />FIRE: No<br />SIZE: 0 ha<br />RESPONSIBLE AGENCY: Rural Fire Service<br />UPDATED: 29 Nov 2013 20:04
+]]>
+      </description>
+      <georss:point>-30.9169 152.9417</georss:point>
+    </item>
+  </channel>
+</rss>
