@@ -11,8 +11,6 @@ namespace RfsForChrome.Service.Models
         [JsonConverter(typeof(StringEnumConverter))]
         public Category Category { get; set; }
 
-        public string Link { get; set; }
-
         public DateTime LastUpdated { get; set; }
 
         public string CouncilArea { get; set; }
