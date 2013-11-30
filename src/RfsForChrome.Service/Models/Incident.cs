@@ -20,5 +20,9 @@ namespace RfsForChrome.Service.Models
         public string Status { get; set; }
 
         public string Size { get; set; }
+
+        public string Type { get; set; }
+
+        public string Location { get; set; }
     }
 }

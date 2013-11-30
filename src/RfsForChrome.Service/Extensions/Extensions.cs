@@ -8,7 +8,7 @@ namespace RfsForChrome.Service.Extensions
         public static DateTime MyToDateTime(this string value)
         {
             DateTime converted;
-            DateTime.TryParse(value, CultureInfo.CreateSpecificCulture("en-AU"), DateTimeStyles.None, out converted);
+            DateTime.TryParseExact(value, "dd MMM yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.AllowWhiteSpaces, out converted);
             return converted;
         }
     }

@@ -1,5 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Xml.Linq;
 using NUnit.Framework;
 using RfsForChrome.Service;
@@ -43,5 +46,23 @@ namespace RfsForChrome.Test
             var incident = model.ElementAt(1);
             Assert.That(incident.Size, Is.EqualTo("0 ha"));
         }
+
+        [Test]
+        public void ShouldParseTimeFromDescriptionString()
+        {
+            var orderer = new OrderAndModelIncidents();
+            var model = orderer.CreateModel(_document);
+            var incident = model.ElementAt(1);
+            Assert.That(incident.LastUpdated, Is.EqualTo(new DateTime(2013, 11, 29, 20, 04,0)));
+        }
+
+//        [Test]
+//        public void ShouldGetLocation()
+//        {
+//            var orderer = new OrderAndModelIncidents();
+//            var model = orderer.CreateModel(_document);
+//            var incident = model.ElementAt(1);
+//            Assert.That(incident.Location, Is.EqualTo("Pacific Hwy xs Cooks Lane Clybucca"));
+//        }
     }
 }
