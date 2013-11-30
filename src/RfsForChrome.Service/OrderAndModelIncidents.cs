@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
@@ -29,7 +30,23 @@ namespace RfsForChrome.Service
                     Size = ParseItemFromDescriptionString(s.Element("description").Value, "SIZE"),
                     Type = ParseItemFromDescriptionString(s.Element("description").Value, "TYPE")
 
-                });
+                }).ToList();
+//            incidents.Add(new Incident()
+//                {
+//                    Category = Category.EmergencyWarning,
+//                    Title = "Some Dodgy Fire",
+//                    Status = "out of control",
+//                    LastUpdated = DateTime.Now,
+//                    Location = "Somewhere"
+//                });
+//            incidents.Add(new Incident()
+//            {
+//                Category = Category.WatchAndAct,
+//                Title = "Another Dodgy Fire",
+//                Status = "out of control",
+//                LastUpdated = DateTime.Now,
+//                Location = "Somewhere"
+//            });
             return incidents.OrderBy(incident => incident.Category).ThenByDescending(incident => incident.LastUpdated);
         }
 
