@@ -33,7 +33,7 @@ namespace RfsForChrome.Service
             try
             {
                 var document = XDocument.Load(_majorIncidentsUrl.ToString());
-                return _orderIncidents.CreateModel(document).Take(10);
+                return _orderIncidents.CreateModel(document);
             }
             catch (Exception ex)
             {

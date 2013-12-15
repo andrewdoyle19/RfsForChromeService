@@ -22,5 +22,12 @@ namespace RfsForChrome.Service.Models
         public string Type { get; set; }
 
         public string Location { get; set; }
+
+        public string Link { get; set; }
+
+        public string LastUpdatedAsString 
+        {
+            get { return LastUpdated.ToString("dd/MM/yyyy HH:mm:ss"); }
+        }
     }
 }

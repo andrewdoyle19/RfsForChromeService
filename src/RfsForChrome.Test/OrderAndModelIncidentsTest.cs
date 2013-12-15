@@ -6,6 +6,7 @@ using System.Text;
 using System.Xml.Linq;
 using NUnit.Framework;
 using RfsForChrome.Service;
+using RfsForChrome.Service.Models;
 
 namespace RfsForChrome.Test
 {

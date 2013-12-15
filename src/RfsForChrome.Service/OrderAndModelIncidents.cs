@@ -28,25 +28,32 @@ namespace RfsForChrome.Service
                     Status = ParseItemFromDescriptionString(s.Element("description").Value, "STATUS"),
                     Location = ParseItemFromDescriptionString(s.Element("description").Value, "LOCATION"),
                     Size = ParseItemFromDescriptionString(s.Element("description").Value, "SIZE"),
-                    Type = ParseItemFromDescriptionString(s.Element("description").Value, "TYPE")
+                    Type = ParseItemFromDescriptionString(s.Element("description").Value, "TYPE"),
+                    Link = s.Element("link").Value
 
                 }).ToList();
-//            incidents.Add(new Incident()
-//                {
-//                    Category = Category.EmergencyWarning,
-//                    Title = "Some Dodgy Fire",
-//                    Status = "out of control",
-//                    LastUpdated = DateTime.Now,
-//                    Location = "Somewhere"
-//                });
-//            incidents.Add(new Incident()
-//            {
-//                Category = Category.WatchAndAct,
-//                Title = "Another Dodgy Fire",
-//                Status = "out of control",
-//                LastUpdated = DateTime.Now,
-//                Location = "Somewhere"
-//            });
+            //incidents.Add(new Incident()
+            //    {
+            //        Category = Category.EmergencyWarning,
+            //        Title = "Some Dodgy Fire",
+            //        Status = "out of control",
+            //        LastUpdated = DateTime.Now,
+            //        Location = "Somewhere",
+            //        Size = "121 ha",
+            //        CouncilArea = "Cessnock",
+            //        Type = "Hazard Reduction"
+            //    });
+            //incidents.Add(new Incident()
+            //{
+            //    Category = Category.WatchAndAct,
+            //    Title = "Another Dodgy Fire",
+            //    Status = "out of control",
+            //    LastUpdated = DateTime.Now,
+            //    Location = "Somewhere",
+            //    Size = "1 ha",
+            //    CouncilArea = "Cessnock",
+            //    Type = "Hazard Reduction"
+            //});
             return incidents.OrderBy(incident => incident.Category).ThenByDescending(incident => incident.LastUpdated);
         }
 
