@@ -29,7 +29,8 @@ namespace RfsForChrome.Service
                     Location = ParseItemFromDescriptionString(s.Element("description").Value, "LOCATION"),
                     Size = ParseItemFromDescriptionString(s.Element("description").Value, "SIZE"),
                     Type = ParseItemFromDescriptionString(s.Element("description").Value, "TYPE"),
-                    Link = s.Element("link").Value
+                    Link = s.Element("link").Value,
+                    MajorFireUpdate = ParseItemFromDescriptionString(s.Element("description").Value, "MAJOR FIRE UPDATE"),
 
                 }).ToList();
             //incidents.Add(new Incident()
@@ -59,6 +60,8 @@ namespace RfsForChrome.Service
 
         private string ParseItemFromDescriptionString(string value, string item)
         {
+            if (value.IndexOf(item) == -1)
+                return string.Empty;
             var trimmed = value.Trim().Replace("\n", " ");
             string regex = string.Format("<br />{0}: (.*?)<br />",item);
             return Regex.Split(trimmed, regex).ElementAt(1).Trim();

@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
-using System.Xml;
 using System.Xml.Linq;
-using Nancy;
 using RfsForChrome.Service.Models;
-using RfsForChrome.Service.Extensions;
 
 namespace RfsForChrome.Service
 {

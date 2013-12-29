@@ -29,5 +29,7 @@ namespace RfsForChrome.Service.Models
         {
             get { return LastUpdated.ToString("dd/MM/yyyy HH:mm:ss"); }
         }
+
+        public string MajorFireUpdate { get; set; }
     }
 }
