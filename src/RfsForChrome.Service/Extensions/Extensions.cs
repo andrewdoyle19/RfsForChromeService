@@ -9,6 +9,8 @@ namespace RfsForChrome.Service.Extensions
         {
             DateTime converted;
             DateTime.TryParseExact(value, "dd MMM yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.AllowWhiteSpaces, out converted);
+            if(converted == DateTime.MinValue)
+                DateTime.TryParseExact(value, "d MMM yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.AllowWhiteSpaces, out converted);
             return converted;
         }
     }
